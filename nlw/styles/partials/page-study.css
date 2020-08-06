@@ -2,46 +2,6 @@
     width: 100vw;
     height: 100vh;
 }
-
-.page-header{
-    background-color: var(--color-primary);
-
-    display: flex;
-    flex-direction: column; /*direciona em colunas*/
-
-}
-
-.page-header .top-bar-container{
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;/*espaço entre os elementos*/
-    padding: 1.6rem 0;
-}
-.page-header .top-bar-container a{
-    height: 3.2rem;
-    transition: opacity 0.2s;/*quando realizar ação que mexa na opacidade, sera a transição*/
-}
-.page-header .top-bar-container a:hover{
-    opacity: 0.6;
-}
-.page-header .top-bar-container img{
-    height: 1.6rem;
-}
-
-.page-header .header-content{
-    width: 90%;
-    margin: 3.2rem auto;
-    position: relative;
-}
-
-.page-header .header-content strong{
-    font: 700 3.6rem Archivo;
-    line-height: 4.2rem;
-    color: var(--color-title-in-primary);
-}
-
 #search-teachers{
     margin-top: 3.2rem;
 }
@@ -75,39 +35,6 @@
     background-color: var(--color-secondary-dark);
 }
 
-.select-block label,
-.input-block label {
-    font-size: 1.4rem;
-    color: var(--color-text-complement);
-}
-
-.input-block input,
-.select-block select{
-    width: 100%;
-    height: 5.6rem;
-    margin-top: 0.8rem;
-    border-radius: 0.8rem;
-    background: var(--color-input-background);
-    border: 1px solid var(--color-line-in-white);
-    outline: 0;
-    padding: 0 1.6rem;
-    font: 1.6rem Archivo;
-
-}
-.input-block{
-    position: relative;
-}
-
-.input-block:focus-within::after{/*quando tiver focado, procura o input-block e cria um elemento html*/
-    content: "";
-    width: calc(100% - 3.2rem);
-    height: 2px;
-    background: var(--color-primary-light);
-    position: absolute;/*absoluto: escreve o elemento na pagina acima de todos numa posição fixa*/
-    /*necessario definir cada posição quando usa absolute*/
-    left: 1.6rem;
-    bottom: 0;
-}
 
 #page-study main{
     margin: 3.2rem auto;
@@ -230,6 +157,9 @@
         max-width: 350px;
     }
 
+    .page-header .input-block input{
+        width: 80%;
+    }
     .teacher-item header,
     .teacher-item footer{
         padding: 32px;
@@ -272,3 +202,4 @@
         margin-right: 16px;
     }
 }
+
