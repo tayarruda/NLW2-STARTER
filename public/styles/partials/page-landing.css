@@ -1,0 +1,135 @@
+#page-landing{
+    background: var(--color-primary);
+}
+
+#page-landing #container{
+    color: var(--color-text-in-primary);
+}
+
+.logo-container img{
+    height: 10rem;
+}
+
+.logo-container{
+    text-align: center;
+    margin-bottom: 3.2rem;
+}
+
+.logo-container h2{
+    font-weight: 500;/*peso da fonte o quando que tá em negrito*/
+    font-size: 3.6rem;
+    line-height: 4.6rem;/*altura da linha do texto*/
+    margin-top: 0.8rem;
+}
+
+.hero-image{
+    width: 100%; /*100% do container pois é o pai dele*/
+}
+
+.buttons-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 3.2rem 0;
+}
+
+.buttons-container a{
+    width: 30rem;
+    height: 10.4rem;
+    border-radius: 0.8rem;/*arredondando as bordas sentido horario*/
+    margin-right: 1.6rem;/*separando os botoes*/
+    font: 700 2.4rem Archivo;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /*tirando o sublinhado do link*/
+    text-decoration: none;/*sem nada*/
+
+    color: var(--color-button-text);
+}
+
+.buttons-container a img{
+    width: 4rem;
+    margin-right: 2.4rem;
+}
+
+
+.buttons-container a.study{
+    background: var(--color-primary-lighter);
+}
+
+.buttons-container a.study:hover{/*hover propriedades aplicadas quando o mouse esta em cima do botao*/
+    background: var(--color-primary-lighter);
+    /**/
+    transition: background 0.2s; /*ira mudar o background*/
+}
+
+.buttons-container a.give-classes{
+    background: var(--color-secondary);
+    margin-right: 0;
+}
+
+.buttons-container a.give-classes:hover{
+    background: var(--color-secondary-dark);
+}
+
+.total-connections{
+    font-size: 1.8rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.total-connections img{
+    margin-left: 0.8rem;
+}
+
+@media(max-width: 699px){
+    :root{
+        font-size: 40%;
+    }
+}
+
+@media (min-width: 1100px){/*regra que é aplicada ao cumprir o padrao de largura minima*/
+    #page-landing #container{
+        /*para telas maiores geralmente usa pixels pq é fixo*/
+        max-width: 1100px;/*ele nao ira ficar maior que 1100px*/
+        display: grid;
+        grid-template-columns: 2fr 1fr 2fr;/*como vou querer as colunas do grid*/
+        grid-template-rows: 350px 1fr;
+        /*ajeitando as posições dos elementos no grid*/
+        grid-template-areas: 
+        "proffy image image"
+        "button button texting";
+        gap: 60px;
+    }
+
+    /*posicionando os elementos nas areas criadas*/
+    .logo-container{
+        grid-area: proffy;
+        text-align: initial; /*coloca no inicio da box*/
+        align-self: center;/*alinha o conteudo do grid ao centro*/
+        margin: 0;
+    }
+
+    .logo-container img{
+        height: 127px;
+    }
+    .hero-image {
+        grid-area: image;
+        height: 350px;
+    }
+    .buttons-container{
+        grid-area: button;
+        justify-content: flex-start;/*coloca no inicio do conteudo*/
+        margin: 0;
+    }
+    .total-connections{
+        grid-area: texting;
+        justify-self: end;
+        font-size: 1.2rem;
+    }
+} 
